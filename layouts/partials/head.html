@@ -48,8 +48,16 @@
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
   "sha512" }}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans-webfont/misans-style.css" />
+  <link
+  rel="stylesheet"
+  crossorigin="anonymous"
+  href="https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Thin.min.css"
+  />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
     integrity="{{ $bundleCSS.Data.Integrity }}" />
