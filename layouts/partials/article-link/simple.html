@@ -94,7 +94,9 @@
       </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
       <div class="py-1 max-w-fit prose dark:prose-invert">
+        <!-- {{ .Summary | plainify | truncate 70 "..." }} -->
         {{ .Summary | plainify }}
+        <!-- {{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }} -->
       </div>
       {{ end }}
     </div>
